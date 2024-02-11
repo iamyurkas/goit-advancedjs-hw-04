@@ -6,20 +6,90 @@
 */
 @import url('./reset.css');
 @import url('./vite-promo.css');
-@import url('./header.css');
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+  --main-light-color: rgb(254, 251, 251);
+  --main-accent-color: rgb(50, 57, 151);
+  --main-dark-color: rgb(50, 50, 50);
+}
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+body {
+  margin: 0;
+  font-family: 'Google Sans', Roboto, Arial, sans-serif;
+  background-color: var(--main-light-color);
+  color: var(--main-dark-color);
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+.header {
+  border-bottom: 1px solid var(--main-dark-color);
+  display: flex;
+  background-color: var(--main-accent-color);
+}
+
+.search-form {
+  padding: 10px 0 10px 0;
+  margin: 0 auto;
+}
+
+input {
+  height: 30px;
+}
+
+button {
+  height: 30px;
+}
+
+/* gallery */
+
+.gallery-link:hover {
+  cursor: zoom-in;
+}
+
+.photo-card:hover {
+  transform: scale(1.03);
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.photo-card {
+  flex-basis: calc((100% - 72px) / 4);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.photo-card .info {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+
+.photo-card .info-item {
+  color: var(--main-dark-color);
+  text-align: center;
+}
+
+.thumb {
+  height: 200px;
+  overflow: hidden;
+}
+
+.thumb img {
+  object-fit: cover;
+}
+
+.load-more {
+  display: block;
+  margin: 50px auto;
+  background-color: var(--main-accent-color);
+  color: var(--main-light-color);
+  border: none;
+}
+
+.hidden {
+  display: none;
 }
